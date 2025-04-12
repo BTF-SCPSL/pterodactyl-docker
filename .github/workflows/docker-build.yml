@@ -1,4 +1,3 @@
-# Workflow name
 name: Build and Push Docker Image
 
 on:
@@ -7,7 +6,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-# Jobs
 jobs:
   build:
     runs-on: ubuntu-latest
