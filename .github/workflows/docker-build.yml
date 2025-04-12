@@ -3,19 +3,17 @@ name: Build and Push Docker Image
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout source code
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/backtofuture/discordegg:latest .
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
@@ -24,12 +22,6 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: |
-          docker build \
-          --build-arg DOTNET_VERSION=6.0 \
-          -t ghcr.io/backtofuture/pterodactyl-docker:latest .
-
       - name: Push Docker image
         run: |
-          docker push ghcr.io/backtofuture/discordeggc:latest
+          docker push ghcr.io/backtofuture/discordegg:latest
