@@ -28,7 +28,7 @@ jobs:
         run: |
           docker build \
           --build-arg DOTNET_VERSION=6.0 \
-          -t ghcr.io/${{ github.repository_owner }}/pterodactyl-docker:latest .
+          -t ghcr.io/backtofuture/pterodactyl-docker:latest .
 
       - name: Push Docker image
         run: |
