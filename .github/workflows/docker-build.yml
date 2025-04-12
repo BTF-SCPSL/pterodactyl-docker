@@ -32,4 +32,4 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/pterodactyl-docker:latest
+          docker push ghcr.io/backtofuture/discordeggc:latest
