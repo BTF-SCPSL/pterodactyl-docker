@@ -30,8 +30,8 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/backtofuture/discordegg:latest .
+          docker build -t ghcr.io/btf-scpsl/discordegg:latest .
 
       - name: Push Docker Image
         run: |
-          docker push ghcr.io/backtofuture/discordegg:latest
+          docker push ghcr.io/btf-scpsl/discordegg:latest
